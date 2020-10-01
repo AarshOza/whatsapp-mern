@@ -4,7 +4,7 @@ import Login from './components/Login';
 import Chat from './components/Chat';
 import Sidebar from './components/Sidebar';
 import Pusher from 'pusher-js';
-import {instance,token} from './axios.js';
+import {instance,} from './axios';  //token
 import {useStateValue} from './StateProvider'
 
 function App() {
@@ -12,18 +12,18 @@ function App() {
   const [{ user, ref_token }, dispatch] = useStateValue();
   const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    if (user) {
-      token.post('accounts:signInWithCustomToken?key=AIzaSyBMcQhXSTg1R89GK3zY2nr9R7ALRnhBMXw',{
-        token: ref_token,
-        returnSecureToken: true
-      }).then(result => console.log(result))
-        .catch(error => console.log(error))
-    }
-    else {
-      return null
-    }
-  },[])
+  // useEffect(() => {
+  //   if (user) {
+  //     token.post('accounts:signInWithCustomToken?key=AIzaSyBMcQhXSTg1R89GK3zY2nr9R7ALRnhBMXw',{
+  //       token: ref_token,
+  //       returnSecureToken: true
+  //     }).then(result => console.log(result))
+  //       .catch(error => console.log(error))
+  //   }
+  //   else {
+  //     return null
+  //   }
+  // },[])
 
 
   useEffect(() => {
