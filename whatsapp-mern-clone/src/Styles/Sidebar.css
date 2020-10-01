@@ -51,8 +51,22 @@
   margin-left: 10px;
 }
 
+
 .sidebar-chats {
+  flex-direction: column;
   flex: 1;
+  width: 100%;
   background-color: white;
-  overflow: scroll;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.sidebar > ::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+.sidebar > ::-webkit-scrollbar-thumb {
+  background: lightgray;
+  border-radius: 20px;
 }

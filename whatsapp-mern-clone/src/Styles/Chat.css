@@ -32,7 +32,8 @@
   background-repeat: repeat;
   background-position: center;
   padding: 30px;
-  overflow: scroll;
+  overflow: auto;
+  overflow-x: hidden;
 }
 
 .chat-message {
@@ -78,6 +79,7 @@
 .chat-footer > form > input {
   flex: 1;
   border-radius: 30px;
+  outline-width: 0;
   padding: 10px;
   border: none;
 }
@@ -89,4 +91,14 @@
 .chat-footer > .MuiSvgIcon-root {
   padding: 10px;
   color: gray;
+}
+
+.chat> ::-webkit-scrollbar {
+  width: 0.5em;
+  background-color: transparent;
+}
+
+.chat> ::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+  border-radius: 20px;
 }
